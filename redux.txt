@@ -1,0 +1,36 @@
+Redux is state management library.
+// better state management in applications
+// Redux is not specific to react.
+// can be used in any framework like angular , vue, vanilla etc.
+// provides single store that you can use to manage a large amount of data
+// installation => npm i @redux-toolkit react-redux
+
+==> How to Create the Redux Store 
+you use the store to manage and track the data that's changing in the application.
+// Create store using
+import {createStore} from 'redux'
+//createStore function accepts three arguments
+1.first is known as reducer
+2.second one is the initial value of the state.
+3. enhancer where we can pass middleware
+
+//basic code 
+import {createStore} from 'reduc'
+
+const reducer = (state,action)=>{
+    console.log("reducer called")
+    return state;
+
+}
+
+const store =  createStore(reducer,0);
+
+//createSlice is a higher order function that accepts an initial state , an object full of reducer functions and a slice name.
+
+//It automativally generates action creators and action types that correspond to the correspond to the reducer and state.
+
+
+-----------------
+Provider 
+The <provider> Component makes the redudx store available to any nested components that need to accesss the redux store.
+since any react component in a react redux app can be connected to the store , most applications will render a provider at the top level . with the entire app's component tree inside of it.
